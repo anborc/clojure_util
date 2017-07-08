@@ -1,7 +1,7 @@
 # clojure_util
 To make coding more fluently by only using parentheses
 
-'''
+```
 (ns util.core)
 
 (defmacro defun
@@ -78,6 +78,6 @@ To make coding more fluently by only using parentheses
     (instance? clojure.lang.Ref var) (dosync (ref-set var val))
     (instance? clojure.lang.Atom var) (reset! var val)
     (instance? clojure.lang.Agent var) (send var (fn [x] val))))
-'''
+```
 
 
