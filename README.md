@@ -1,6 +1,7 @@
 # clojure_util
 To make coding more fluently by only using parentheses
 
+'''
 (ns util.core)
 
 (defmacro defun
@@ -10,9 +11,7 @@ To make coding more fluently by only using parentheses
     `(defn ~fun [~@str] ~arg ~@body)))
     
 ;;(defun foox (x y) (+ x y))
-
 ;;(defun foox2 "hello" (x y) (+ x y))
-
 ;;(defun ^:export init () (println "hello"))
 
 (defmacro for>
@@ -39,7 +38,6 @@ To make coding more fluently by only using parentheses
   `(let [~@arg] ~@body))
 
 ;;(let> ([color size] '("blue" "small")) (str "the " color " door is " size))
-
 ;;(let> ({:keys (v- flower1 flower2)} (m- :flower1 "red" :flower2 "blue")) (str "The flowers are " flower1 " and " flower2))
 
 (defmacro v-
@@ -75,12 +73,11 @@ To make coding more fluently by only using parentheses
   `(rest ~seq))
 
 ;;State Management
-
 (defn setf [var val]
   (cond
     (instance? clojure.lang.Ref var) (dosync (ref-set var val))
     (instance? clojure.lang.Atom var) (reset! var val)
     (instance? clojure.lang.Agent var) (send var (fn [x] val))))
-
+'''
 
 
