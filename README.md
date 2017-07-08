@@ -8,8 +8,11 @@ To make coding more fluently by only using parentheses
   (if (or (string? str) (symbol? str))
     `(defn ~fun ~str [~@arg] ~@body)
     `(defn ~fun [~@str] ~arg ~@body)))
+    
 ;;(defun foox (x y) (+ x y))
+
 ;;(defun foox2 "hello" (x y) (+ x y))
+
 ;;(defun ^:export init () (println "hello"))
 
 (defmacro for>
@@ -23,7 +26,6 @@ To make coding more fluently by only using parentheses
 (defmacro lambda [arg & body]
   `(fn [~@arg] ~@body))
 
-;; the same as lambda 
 (defmacro fun [arg & body]
   `(fn [~@arg] ~@body))
 
@@ -37,6 +39,7 @@ To make coding more fluently by only using parentheses
   `(let [~@arg] ~@body))
 
 ;;(let> ([color size] '("blue" "small")) (str "the " color " door is " size))
+
 ;;(let> ({:keys (v- flower1 flower2)} (m- :flower1 "red" :flower2 "blue")) (str "The flowers are " flower1 " and " flower2))
 
 (defmacro v-
@@ -72,6 +75,7 @@ To make coding more fluently by only using parentheses
   `(rest ~seq))
 
 ;;State Management
+
 (defn setf [var val]
   (cond
     (instance? clojure.lang.Ref var) (dosync (ref-set var val))
